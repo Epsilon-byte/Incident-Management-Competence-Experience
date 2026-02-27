@@ -1,0 +1,10 @@
+{
+  "indicator": "203.0.113.50",
+  "indicator_type": "ip",
+  "signals": {
+    "virustotal": { "malicious": 12, "error": null },
+    "abuseipdb": { "abuseConfidenceScore": 95, "error": null },
+    "ipinfo": { "country": "RU", "org": "Example ISP", "error": null }
+  },
+  "raw": {}
+}

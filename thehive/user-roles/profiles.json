@@ -1,0 +1,93 @@
+{
+  "_comment": "TheHive 5 User Role Definitions — Catnip Games SOC Platform",
+  "_last_updated": "2026-04",
+  "_owner": "Platform Reliability",
+  "profiles": [
+    {
+      "name": "soc-analyst",
+      "description": "Level 1 SOC Analyst — day-to-day alert triage and case handling",
+      "permissions": [
+        "manageAlert",
+        "manageCase",
+        "manageObservable",
+        "manageTask",
+        "manageTaskLog",
+        "accessTheHiveFS"
+      ],
+      "mapped_to": "L1 Analyst"
+    },
+    {
+      "name": "soc-senior",
+      "description": "Level 2 SOC Analyst — can close cases, manage custom fields, escalate",
+      "permissions": [
+        "manageAlert",
+        "manageCase",
+        "manageObservable",
+        "manageTask",
+        "manageTaskLog",
+        "accessTheHiveFS",
+        "manageCustomField",
+        "manageCaseTemplate"
+      ],
+      "mapped_to": "L2 Analyst / Incident Lead"
+    },
+    {
+      "name": "soc-manager",
+      "description": "SOC Manager — full platform access including user and organisation management",
+      "permissions": [
+        "manageAlert",
+        "manageCase",
+        "manageObservable",
+        "manageTask",
+        "manageTaskLog",
+        "accessTheHiveFS",
+        "manageCustomField",
+        "manageCaseTemplate",
+        "manageUser",
+        "manageDashboard",
+        "manageOrganisation",
+        "manageProcedure"
+      ],
+      "mapped_to": "SOC Manager / Team Lead"
+    },
+    {
+      "name": "soc-readonly",
+      "description": "Read-only access for stakeholders, auditors, and developers",
+      "permissions": [
+        "accessTheHiveFS"
+      ],
+      "mapped_to": "Stakeholder / Audit / Development Team"
+    },
+    {
+      "name": "cortex-integration",
+      "description": "Service account used by Cortex for automated case updates",
+      "permissions": [
+        "manageAlert",
+        "manageCase",
+        "manageObservable",
+        "manageTask",
+        "manageTaskLog"
+      ],
+      "mapped_to": "Service Account — do not assign to humans"
+    },
+    {
+      "name": "misp-integration",
+      "description": "Service account used by MISP sync connector",
+      "permissions": [
+        "manageAlert",
+        "manageCase",
+        "manageObservable"
+      ],
+      "mapped_to": "Service Account — do not assign to humans"
+    }
+  ],
+  "simulated_users": [
+    { "username": "analyst1@catnip.soc", "profile": "soc-analyst", "note": "Demo L1 analyst account" },
+    { "username": "analyst2@catnip.soc", "profile": "soc-analyst", "note": "Demo L1 analyst account" },
+    { "username": "senior1@catnip.soc", "profile": "soc-senior", "note": "Demo L2 analyst account" },
+    { "username": "manager@catnip.soc", "profile": "soc-manager", "note": "Demo SOC manager account" },
+    { "username": "devteam@catnip.soc", "profile": "soc-readonly", "note": "Read-only for dev team" },
+    { "username": "cortex-svc@catnip.soc", "profile": "cortex-integration", "note": "Cortex service account" },
+    { "username": "misp-svc@catnip.soc", "profile": "misp-integration", "note": "MISP sync service account" }
+  ]
+}

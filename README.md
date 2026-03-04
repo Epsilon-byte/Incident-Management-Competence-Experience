@@ -1,122 +1,77 @@
-Competency Experience Specification
-Work Role: Cyber Defense Analyst
+# Catnip Games International — SOC Platform
 
-DCWF 511 (NIST: PR-DA-001); Workforce Element: Cybersecurity
+Prototype Security Operations Centre platform for Catnip Games International, built to support the launch of their first major multiplayer game.
 
-Description: Uses data collected from a variety of cyber defense tools (e.g., IDS alerts, firewalls, network traffic logs.) to analyse events that occur within their environments for the purposes of mitigating threats.
+## Platform Overview
 
-Work Domain: Incident Management
+| Component | Purpose | Port |
+|-----------|---------|------|
+| TheHive | Case & incident management | (Need to edit) |
+| MISP | Threat intelligence sharing | (Need to edit) |
+| Cortex | Automated analysis & response | (Need to edit) |
+| Elasticsearch | Log storage & search | (Need to edit) |
+| Kibana | Log visualisation & dashboards | (Need to edit) |
 
-ACTOR
-Who is this Competency Experience designed for and what pre-requisite Knowledge, Skill, Ability and Task should they have?
+## Repository Structure
 
-Skills Prerequisites
-Incident response methodologies, SIEM administration and configuration, Threat intelligence analysis, Python/PowerShell automation, Log analysis and correlation, Playbook development, REST API integration, Analytics and reporting
+```
+catnip-soc-platform/
+├── .github/                    # GitHub templates and workflows
+├── docs/                       # Architecture, procedures, runbooks
+├── thehive/                    # TheHive config, roles, dashboards
+├── misp/                       # MISP feeds, taxonomies, templates
+├── cortex-automation/          # Cortex analysers and responders
+├── infrastructure-cortex       # Deployment of Cortex
+├── python-automation/          # Python scripts and alert enrichment
+├── elasticsearch/              # Index templates and retention policies
+├── playbooks/                  # Incident response playbooks
+├── metrics/                    # KPI definitions and reporting
+└── tests/                      # Integration and smoke tests
+```
 
-Tools & Technologies
-TheHive incident management, MISP threat intelligence, Cortex analysers, Elasticsearch log management, Docker/container orchestration, Linux system administration, Git version control, Automation frameworks
+## Quick Start
 
-Abilities
-Incident handling and triage, Process documentation, Alert correlation analysis, Metric development, Team coordination, Technical writing, Training development, Time management
+1. Clone this repository onto your VM
+2. Follow `docs/architecture/deployment-guide.md`
+3. Run `automation/scripts/health_check.sh` to verify all services
 
-BEHAVIOUR
-What Knowledge, Skills, Abilities and Task(s) will the Actor need to complete for this work role?
+## Team Roles
 
-Knowledge:
-[61] Incident response and handling methodologies
+| Role | Owner | Key Deliverables |
+|------|-------|-----------------|
+| Infrastructure & Deployment | TBC | VM setup, Docker, service config |
+| Incident Response Lead | TBC | Playbooks, escalation procedures |
+| MISP & Threat Intelligence | TBC | IOC feeds, intelligence sharing |
+| Cortex & Automation | TBC | Analysers, automated workflows |
+| Platform Reliability & Git | TBC | Backup/recovery, repo, user roles, alert enrichment |
+| Metrics & Reporting | TBC | KPI dashboard, response time tracking |
 
-[966] Enterprise incident response program roles/responsibilities
+## Non-Functional Requirements
 
-[66] Intrusion detection methodologies for host/network-based intrusions
+- Alert triage: ≤ 15 minutes
+- Alert throughput: 1,000 alerts/day
+- Intelligence sharing latency: < 5 minutes
+- Concurrent incidents supported: 100
+- Availability: 24/7
 
-[967] Current and emerging threats/threat vectors
+## Branching Strategy
 
-Abilities:
-[6918] Apply cybersecurity strategy to cloud computing models and architectures
+| Branch | Purpose |
+|--------|---------|
+| `main` | Stable, demo-ready code only |
+| `develop` | Integration branch for all features |
+| `feature/<name>` | Individual feature development |
+| `hotfix/<name>` | Urgent fixes to main |
 
-Tasks:
-[705] Manage security monitoring for situational awareness
+## Commit Convention
 
-[824] Recognise and report security violations
+```
+<type>(<scope>): <short description>
 
-[852] Supervise protective/corrective measures for incidents
+Types: feat, fix, docs, config, test, chore
+Example: feat(thehive): add account-compromise custom fields
+```
 
-[707] Manage threat analysis and threat information production
+## Licence
 
-CONTEXT
-What are the scenario and constraints that frame the delivery of the Tasks?
-
-Scenario
-You are a member of the Security Operations team at Catnip Games International, tasked with protecting their growing gaming infrastructure as they prepare for their first major multiplayer game launch. With over 300 Linux servers across two data centers handling sensitive player data, matchmaking services, and game hosting, the company has faced several security challenges during beta testing. Recent incidents included undetected bot attacks attempting to exploit game mechanics, delayed responses to potential account compromises, and poor coordination between development and security teams when investigating suspicious activities. A recent incident where player account data was nearly exposed due to an advanced social engineering attempt highlighted the lack of standardised incident response procedures and insufficient threat intelligence sharing between teams.
-
-With the game launch approaching and player trust at stake, you are tasked with designing and implementing a prototype incident management platform using TheHive, MISP, and Cortex. The implementation should demonstrate your understanding of security operations, incident response procedures, and automated threat intelligence sharing
-
-Requirements
-
-Functional Requirements
-
-Prototype SOC Implementation
-
-Deploy integrated incident management platform
-
-Configure threat intelligence sharing
-
-Implement automated response workflows
-
-Establish incident tracking system
-
-Create response playbooks
-
-Set up reporting mechanisms
-
- 
-
-Technology Stack
-
-TheHive for case management
-
-MISP for threat intelligence
-
-Cortex for automation
-
-Elasticsearch for logging
-
-Python for custom integrations
-
-Git for version control
-
- 
-
-Non-Functional Requirements:
-
-Performance
-
-15-minute maximum alert triage time
-
-<5 minute intelligence sharing latency
-
-Support for 100 concurrent incidents
-
-Handle 1000 alerts per day
-
-
-Reliability
-
-24/7 operational availability
-
-No single point of failure
-
-Automated backup system
-
-Data retention compliance
- 
-
-Operations Management
-
-Clear escalation procedures
-
-Documented response workflows
-
-KPI tracking capabilities
-
-Team collaboration tools
+Internal use only — Catnip Games International SOC Team.

@@ -1,0 +1,24 @@
+{
+  "indicator": "google.com",
+  "indicator_type": "domain",
+  "signals": {
+    "virustotal": {
+      "malicious": null,
+      "error": "VirusTotal authentication failed (check VT_API_KEY)."
+    },
+    "abuseipdb": {
+      "abuseConfidenceScore": null,
+      "error": null
+    },
+    "ipinfo": {
+      "country": null,
+      "org": null,
+      "error": null
+    }
+  },
+  "raw": {
+    "virustotal": null,
+    "abuseipdb": null,
+    "ipinfo": null
+  }
+}

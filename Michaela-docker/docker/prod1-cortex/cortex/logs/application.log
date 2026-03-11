@@ -11690,3 +11690,4 @@ org.elastic4play.AuthenticationError: Authentication using API key is not suppor
 2026-03-11 10:58:45,802 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-13 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
 2026-03-11 10:58:48,482 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-13 - 172.20.0.11 GET /api/status took 1ms and returned 200 278 bytes
 2026-03-11 10:58:54,827 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 11:56:48,478 [INFO] from play.api.http.HttpErrorHandlerExceptions in main - Registering exception handler: guice-provision-exception-handler

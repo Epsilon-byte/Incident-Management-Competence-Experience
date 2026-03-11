@@ -12237,3 +12237,5 @@ Info(architecture=x86_64, containers=13, containersStopped=3, containersPaused=0
 2026-03-11 11:57:19,652 [INFO] from play.api.Play in main - Application started (Prod) (no global state)
 2026-03-11 11:57:20,854 [INFO] from play.core.server.PekkoHttpServer in main - Listening for HTTP on /0:0:0:0:0:0:0:0:9001
 2026-03-11 11:57:25,721 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-8 - 0:0:0:0:0:0:0:1 GET /api/status took 73ms and returned 200 278 bytes
+2026-03-11 11:57:35,910 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 4ms and returned 200 278 bytes
+2026-03-11 11:57:44,741 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes

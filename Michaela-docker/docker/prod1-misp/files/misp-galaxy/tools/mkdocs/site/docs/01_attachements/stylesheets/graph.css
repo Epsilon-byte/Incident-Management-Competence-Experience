@@ -1,0 +1,30 @@
+.tooltip {
+    position: absolute;
+    text-align: center;
+    padding: 8px;
+    background: lightgrey;
+    border: 0px;
+    border-radius: 4px;
+    pointer-events: none;
+    color: black;
+}
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.svg-content {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.md-typeset__table {
+    width: 100%;
+}

@@ -12425,3 +12425,4 @@ Info(architecture=x86_64, containers=13, containersStopped=3, containersPaused=0
 2026-03-11 12:15:32,819 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-13 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
 2026-03-11 12:15:32,863 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-9 - GET /api/alert returned 403
 2026-03-11 12:15:32,864 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 172.20.0.4 GET /api/alert took 39ms and returned 403 84 bytes
+2026-03-11 12:15:34,926 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes

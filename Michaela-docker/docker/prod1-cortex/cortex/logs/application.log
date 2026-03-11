@@ -12239,3 +12239,189 @@ Info(architecture=x86_64, containers=13, containersStopped=3, containersPaused=0
 2026-03-11 11:57:25,721 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-8 - 0:0:0:0:0:0:0:1 GET /api/status took 73ms and returned 200 278 bytes
 2026-03-11 11:57:35,910 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 4ms and returned 200 278 bytes
 2026-03-11 11:57:44,741 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 11:57:54,872 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 3ms and returned 200 278 bytes
+2026-03-11 11:58:04,934 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 11:58:13,704 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 11:58:17,780 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 11:58:17,781 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 11:58:18,206 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-12 - GET /api/alert returned 403
+2026-03-11 11:58:18,207 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.4 GET /api/alert took 402ms and returned 403 84 bytes
+2026-03-11 11:58:23,867 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 7ms and returned 200 278 bytes
+2026-03-11 11:58:33,926 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 11:58:42,698 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-4 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 11:58:52,763 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-8 - 0:0:0:0:0:0:0:1 GET /api/status took 3ms and returned 200 278 bytes
+2026-03-11 11:59:01,697 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 5ms and returned 200 278 bytes
+2026-03-11 11:59:11,807 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 0:0:0:0:0:0:0:1 GET /api/status took 3ms and returned 200 278 bytes
+2026-03-11 11:59:15,208 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.4 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 11:59:15,673 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 172.20.0.4 GET /api/status took 4ms and returned 200 278 bytes
+2026-03-11 11:59:15,782 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-12 - GET /api/alert returned 403
+2026-03-11 11:59:15,784 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.4 GET /api/alert took 94ms and returned 403 84 bytes
+2026-03-11 11:59:21,930 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-8 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 11:59:30,792 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-8 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 11:59:40,864 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 11:59:50,954 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 11:59:59,744 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:00:09,805 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:00:12,692 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.4 GET /api/status took 4ms and returned 200 278 bytes
+2026-03-11 12:00:13,229 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 172.20.0.4 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:00:13,262 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-11 - GET /api/alert returned 403
+2026-03-11 12:00:13,263 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 172.20.0.4 GET /api/alert took 26ms and returned 403 84 bytes
+2026-03-11 12:00:19,857 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:00:28,608 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:00:38,658 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:00:48,740 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 3ms and returned 200 278 bytes
+2026-03-11 12:00:57,495 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-8 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:01:07,550 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-4 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:01:10,122 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-8 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:01:10,695 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-4 - 172.20.0.4 GET /api/status took 3ms and returned 200 278 bytes
+2026-03-11 12:01:10,736 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-11 - GET /api/alert returned 403
+2026-03-11 12:01:10,736 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 172.20.0.4 GET /api/alert took 31ms and returned 403 84 bytes
+2026-03-11 12:01:17,672 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:01:26,438 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:01:36,528 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:01:46,573 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:01:55,396 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:02:05,481 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-4 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:02:07,564 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:02:08,174 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-4 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:02:08,197 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-4 - GET /api/alert returned 403
+2026-03-11 12:02:08,197 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-4 - 172.20.0.4 GET /api/alert took 18ms and returned 403 84 bytes
+2026-03-11 12:02:15,540 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:02:24,327 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:02:34,402 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-8 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:02:44,566 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-8 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:02:53,396 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 3ms and returned 200 278 bytes
+2026-03-11 12:03:03,513 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:03:04,982 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.4 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:03:05,612 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:03:05,722 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-12 - GET /api/alert returned 403
+2026-03-11 12:03:05,722 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.4 GET /api/alert took 101ms and returned 403 84 bytes
+2026-03-11 12:03:13,575 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:03:22,363 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:03:32,457 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 3ms and returned 200 278 bytes
+2026-03-11 12:03:42,532 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:03:51,280 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-4 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:04:01,354 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:04:02,424 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 172.20.0.4 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:04:03,162 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:04:03,206 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-11 - GET /api/alert returned 403
+2026-03-11 12:04:03,207 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 172.20.0.4 GET /api/alert took 40ms and returned 403 84 bytes
+2026-03-11 12:04:11,431 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:04:20,196 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-8 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:04:30,264 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:04:40,322 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-4 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:04:49,084 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:04:59,152 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:04:59,861 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.4 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:05:00,639 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-4 - 172.20.0.4 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:05:00,672 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-11 - GET /api/alert returned 403
+2026-03-11 12:05:00,673 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 172.20.0.4 GET /api/alert took 26ms and returned 403 84 bytes
+2026-03-11 12:05:09,228 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:05:17,999 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:05:28,084 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-4 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:05:38,144 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:05:46,930 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 0:0:0:0:0:0:0:1 GET /api/status took 3ms and returned 200 278 bytes
+2026-03-11 12:05:56,984 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-4 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:05:57,261 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:05:58,073 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 172.20.0.4 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:05:58,103 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-9 - GET /api/alert returned 403
+2026-03-11 12:05:58,104 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 172.20.0.4 GET /api/alert took 23ms and returned 403 84 bytes
+2026-03-11 12:06:07,030 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:06:15,831 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:06:25,897 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:06:35,958 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:06:44,716 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-4 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:06:54,712 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-13 - 172.20.0.4 GET /api/status took 3ms and returned 200 278 bytes
+2026-03-11 12:06:54,788 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-13 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:06:55,552 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-13 - 172.20.0.4 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:06:55,677 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-9 - GET /api/alert returned 403
+2026-03-11 12:06:55,677 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 172.20.0.4 GET /api/alert took 118ms and returned 403 84 bytes
+2026-03-11 12:07:04,845 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:07:13,612 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:07:23,674 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:07:33,725 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:07:42,521 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-13 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:07:52,144 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.4 GET /api/status took 9ms and returned 200 278 bytes
+2026-03-11 12:07:52,564 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:07:53,102 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.4 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:07:53,139 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-12 - GET /api/alert returned 403
+2026-03-11 12:07:53,139 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.4 GET /api/alert took 31ms and returned 403 84 bytes
+2026-03-11 12:08:02,614 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-13 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:08:11,360 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:08:21,421 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-4 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:08:31,474 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 3ms and returned 200 278 bytes
+2026-03-11 12:08:40,253 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:08:49,577 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 172.20.0.4 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:08:50,306 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:08:50,566 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:08:50,595 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-7 - GET /api/alert returned 403
+2026-03-11 12:08:50,595 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 172.20.0.4 GET /api/alert took 22ms and returned 403 84 bytes
+2026-03-11 12:09:00,369 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-4 - 0:0:0:0:0:0:0:1 GET /api/status took 16ms and returned 200 278 bytes
+2026-03-11 12:09:09,093 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:09:19,193 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:09:29,248 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-4 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:09:38,022 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:09:46,990 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:09:48,009 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:09:48,071 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-6 - GET /api/alert returned 403
+2026-03-11 12:09:48,071 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 172.20.0.4 GET /api/alert took 56ms and returned 403 84 bytes
+2026-03-11 12:09:48,103 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 0ms and returned 200 278 bytes
+2026-03-11 12:09:58,153 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:10:06,905 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:10:16,977 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 3ms and returned 200 278 bytes
+2026-03-11 12:10:27,035 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-4 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:10:35,824 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:10:44,431 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-4 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:10:45,510 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-4 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:10:45,531 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-4 - GET /api/alert returned 403
+2026-03-11 12:10:45,532 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-4 - 172.20.0.4 GET /api/alert took 16ms and returned 403 84 bytes
+2026-03-11 12:10:45,876 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-4 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:10:55,926 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-13 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:11:04,663 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:11:14,778 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-13 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:11:24,825 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 3ms and returned 200 278 bytes
+2026-03-11 12:11:33,640 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:11:41,855 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-4 - 172.20.0.4 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:11:42,954 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-4 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:11:42,985 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-7 - GET /api/alert returned 403
+2026-03-11 12:11:42,986 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 172.20.0.4 GET /api/alert took 26ms and returned 403 84 bytes
+2026-03-11 12:11:43,704 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-13 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:11:53,775 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-4 - 0:0:0:0:0:0:0:1 GET /api/status took 4ms and returned 200 278 bytes
+2026-03-11 12:12:02,548 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-13 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:12:12,613 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:12:22,662 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 0:0:0:0:0:0:0:1 GET /api/status took 0ms and returned 200 278 bytes
+2026-03-11 12:12:31,415 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:12:39,274 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:12:40,404 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:12:40,444 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-7 - GET /api/alert returned 403
+2026-03-11 12:12:40,445 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 172.20.0.4 GET /api/alert took 35ms and returned 403 84 bytes
+2026-03-11 12:12:41,502 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:12:51,602 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:13:00,356 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:13:10,411 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-13 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:13:20,455 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:13:29,214 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 0:0:0:0:0:0:0:1 GET /api/status took 0ms and returned 200 278 bytes
+2026-03-11 12:13:36,715 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:13:37,878 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:13:37,920 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-12 - GET /api/alert returned 403
+2026-03-11 12:13:37,920 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.4 GET /api/alert took 36ms and returned 403 84 bytes
+2026-03-11 12:13:39,287 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-13 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-11 12:13:49,496 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:13:58,283 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:14:08,345 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:14:18,403 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 3ms and returned 200 278 bytes
+2026-03-11 12:14:27,166 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 0:0:0:0:0:0:0:1 GET /api/status took 0ms and returned 200 278 bytes
+2026-03-11 12:14:34,134 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:14:35,345 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:14:35,386 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-7 - GET /api/alert returned 403
+2026-03-11 12:14:35,387 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 172.20.0.4 GET /api/alert took 27ms and returned 403 84 bytes
+2026-03-11 12:14:37,215 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:14:47,272 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 0:0:0:0:0:0:0:1 GET /api/status took 0ms and returned 200 278 bytes
+2026-03-11 12:14:56,027 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:15:06,078 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:15:16,130 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-13 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:15:24,877 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:15:31,568 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-13 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:15:32,819 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-13 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-11 12:15:32,863 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-9 - GET /api/alert returned 403
+2026-03-11 12:15:32,864 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 172.20.0.4 GET /api/alert took 39ms and returned 403 84 bytes

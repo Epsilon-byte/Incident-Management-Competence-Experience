@@ -1,0 +1,10 @@
+{
+  "indicator": "suspicious-example.biz",
+  "indicator_type": "domain",
+  "signals": {
+    "virustotal": { "malicious": 2, "error": null },
+    "abuseipdb": { "abuseConfidenceScore": null, "error": null },
+    "ipinfo": { "country": null, "org": null, "error": null }
+  },
+  "raw": {}
+}

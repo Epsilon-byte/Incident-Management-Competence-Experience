@@ -1,0 +1,24 @@
+{
+  "indicator": "https://example.com",
+  "indicator_type": "url",
+  "signals": {
+    "virustotal": {
+      "malicious": null,
+      "error": "VirusTotal authentication failed (check VT_API_KEY)."
+    },
+    "abuseipdb": {
+      "abuseConfidenceScore": null,
+      "error": null
+    },
+    "ipinfo": {
+      "country": null,
+      "org": null,
+      "error": null
+    }
+  },
+  "raw": {
+    "virustotal": null,
+    "abuseipdb": null,
+    "ipinfo": null
+  }
+}

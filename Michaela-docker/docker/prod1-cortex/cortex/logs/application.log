@@ -12440,3 +12440,660 @@ Info(architecture=x86_64, containers=13, containersStopped=3, containersPaused=0
 2026-03-11 12:16:51,587 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
 2026-03-11 12:17:01,667 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-13 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
 2026-03-11 12:17:11,715 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:24:00,326 [INFO] from play.api.http.HttpErrorHandlerExceptions in main - Registering exception handler: guice-provision-exception-handler
+2026-03-12 20:24:03,403 [INFO] from org.reflections.Reflections in main - Reflections took 255 ms to scan 2 urls, producing 99 keys and 661 values
+2026-03-12 20:24:03,428 [INFO] from module in main - Loading model class org.thp.cortex.models.WorkerConfigModel
+2026-03-12 20:24:03,435 [INFO] from module in main - Loading model class org.thp.cortex.models.UserModel
+2026-03-12 20:24:03,435 [INFO] from module in main - Loading model class org.thp.cortex.models.ArtifactModel
+2026-03-12 20:24:03,435 [INFO] from module in main - Loading model class org.thp.cortex.models.AuditModel
+2026-03-12 20:24:03,435 [INFO] from module in main - Loading model class org.thp.cortex.models.OrganizationModel
+2026-03-12 20:24:03,435 [INFO] from module in main - Loading model class org.thp.cortex.models.WorkerModel
+2026-03-12 20:24:03,436 [INFO] from module in main - Loading model class org.elastic4play.services.AttachmentModel
+2026-03-12 20:24:03,436 [INFO] from module in main - Loading model class org.thp.cortex.models.JobModel
+2026-03-12 20:24:03,436 [INFO] from module in main - Loading model class org.thp.cortex.models.ReportModel
+2026-03-12 20:24:03,436 [INFO] from module in main - Loading model class org.elastic4play.services.DBListModel
+2026-03-12 20:24:03,450 [INFO] from module in main - Loading authentication module class org.thp.cortex.services.KeyAuthSrv
+2026-03-12 20:24:03,451 [INFO] from module in main - Loading authentication module class org.thp.cortex.services.LocalAuthSrv
+2026-03-12 20:24:03,452 [INFO] from module in main - Loading authentication module class org.elastic4play.services.auth.LdapAuthSrv
+2026-03-12 20:24:03,452 [INFO] from module in main - Loading authentication module class org.thp.cortex.services.OAuth2Srv
+2026-03-12 20:24:03,452 [INFO] from module in main - Loading authentication module class org.elastic4play.services.auth.ADAuthSrv
+2026-03-12 20:24:03,446 [INFO] from org.apache.pekko.event.slf4j.Slf4jLogger in application-pekko.actor.default-dispatcher-5 - Slf4jLogger started
+2026-03-12 20:24:07,860 [WARN] from org.thp.cortex.services.WorkerSrv in application-pekko.actor.default-dispatcher-8 - Worker path (/opt/cortexneurons/responders) is not found
+java.net.MalformedURLException: no protocol: /opt/cortexneurons/responders
+	at java.base/java.net.URL.<init>(URL.java:645)
+	at java.base/java.net.URL.<init>(URL.java:541)
+	at java.base/java.net.URL.<init>(URL.java:488)
+	at org.thp.cortex.services.WorkerSrv.$anonfun$scan$21(WorkerSrv.scala:204)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:691)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:500)
+	at org.apache.pekko.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:72)
+	at org.apache.pekko.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:109)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:94)
+	at org.apache.pekko.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:109)
+	at org.apache.pekko.dispatch.TaskInvocation.run(AbstractDispatcher.scala:59)
+	at org.apache.pekko.dispatch.ForkJoinExecutorConfigurator$PekkoForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:62)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+2026-03-12 20:24:07,860 [WARN] from org.thp.cortex.services.WorkerSrv in application-pekko.actor.default-dispatcher-6 - Worker path (/opt/cortexneurons/analyzers) is not found
+java.net.MalformedURLException: no protocol: /opt/cortexneurons/analyzers
+	at java.base/java.net.URL.<init>(URL.java:645)
+	at java.base/java.net.URL.<init>(URL.java:541)
+	at java.base/java.net.URL.<init>(URL.java:488)
+	at org.thp.cortex.services.WorkerSrv.$anonfun$scan$21(WorkerSrv.scala:204)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:691)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:500)
+	at org.apache.pekko.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:72)
+	at org.apache.pekko.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:109)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:94)
+	at org.apache.pekko.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:109)
+	at org.apache.pekko.dispatch.TaskInvocation.run(AbstractDispatcher.scala:59)
+	at org.apache.pekko.dispatch.ForkJoinExecutorConfigurator$PekkoForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:62)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+2026-03-12 20:24:09,352 [INFO] from org.thp.cortex.services.WorkerSrv in application-pekko.actor.default-dispatcher-7 - New worker list:
+
+	NERD 1.1
+	RiskIQ_Certificates 1.0
+	IPVoid 1.0
+	SEKOIAIntelligenceCenter_Indicators 1.0
+	RiskIQ_Projects 1.0
+	PaloAltoWildFire_URL_submission 1.0
+	Shuffle 1.0
+	SEKOIAIntelligenceCenter_Context 1.0
+	CrowdStrikeFalcon_unsuppressDetections 1.0
+	HarfangLab-GetArtifactAll 1.0
+	RiskIQ_Cookies 1.0
+	HIBP_Query 2.0
+	CheckPoint_Unlock 1.0
+	DNSSinkhole 1.0
+	DomainToolsIris_Investigate 1.0
+	ThreatMiner 1.0
+	MSDefender-UnisolateMachine 1.0
+	Autofocus_SearchJSON 1.0
+	Gatewatcher_CTI_Identity 1.0
+	JAMFProtect_removeHashfromPreventList 1.0
+	DomainTools_Reputation 2.0
+	PaloAltoCortexXDR_isolate 1.0
+	AMPforEndpoints_SCDAdd 1.0
+	MaxMind_GeoIP 4.0
+	FileInfo 8.0
+	DuoBypassUserAccount 1.0
+	ClusterHawk 1.0
+	PaloAltoNGFW_block_external_user 1.0.0
+	MSDefender-PushIOC-Block 2.1
+	FireEyeiSight 1.0
+	Malwares_GetReport 1.0
+	AWSLambda_InvokeFunction 1.0
+	JAMFProtect_addHashtoPreventList 1.0
+	SentinelOne_Hash_Blacklister 1.0
+	CheckPoint_Lock 1.0
+	Mnemonic_pDNS_Public 3.0
+	UrlDNA_New_Scan 0.1.0
+	SEKOIAIntelligenceCenter_Observables 1.0
+	THOR_Thunderstorm_ScanSample 0.3.1
+	Verifalia 1.0
+	RiskIQ_Articles 1.0
+	DomainTools_Risk 2.0
+	GTI_ScanURL 1.0
+	QrDecode 1.0
+	CIRCLPassiveDNS 2.0
+	Watcher_Remove 1.1
+	MSEntraID_GetSignIns 1.0
+	EchoTrail 1.0
+	PassiveTotal_Osint 2.0
+	HarfangLab_SearchDriverByFileName 1.0
+	DomainTools_WhoisLookupUnparsed 2.0
+	RiskIQ_Resolutions 1.0
+	Netcraft_TakedownPhishingURL 1.0
+	PassiveTotal_Host_Pairs 2.0
+	Hunterio_DomainSearch 1.0
+	LupovisProwl_GetIPReputation 1.1
+	CyberChef_FromCharCode 1.0
+	CyberChef_FromHex 1.0
+	PaloAltoNGFW_block_port_for_external_communication 2.0.0
+	PassiveTotal_Passive_Dns 2.1
+	Shodan_Host 1.0
+	SendGrid 1.0
+	HarfangLab_SearchDriverByHash 1.0
+	Hashdd_Detail 2.0
+	Slack_SyncChannel 1.0
+	EclecticIQ_Indicator_API 1.0
+	DomainTools_ReverseIPWhois 2.0
+	RecordedFuture 2.0
+	DomainMailSPFDMARC 1.2
+	HarfangLab-GetStartupFiles 1.0
+	CIRCLPassiveSSL 2.0
+	Inoitsu 1.0
+	Splunk_Search_User_Agent 3.0
+	RiskIQ_HostpairParents 1.0
+	VirusTotal_Scan 3.1
+	MISPWarningLists 2.0
+	Gmail_BlockDomain 1.0
+	TorProject 1.0
+	CrowdstrikeFalcon_Sandbox_Win7 1.0
+	CIRCLVulnerabilityLookup 1.0
+	Redmine_Issue 1.0
+	HarfangLab-SearchHash 1.0
+	ChainAbuse 1.1
+	MSDefender-AutoInvestigation 1.0
+	EmergingThreats_DomainInfo 1.0
+	DevTools_Echo_Analyzer 1.0
+	DNSDB_DomainName 2.0
+	MailIncidentStatus 1.0
+	PaloAltoNGFW_block_internal_domain 2.0.0
+	MSEntraID_disableUser 1.0
+	GTI_ScanPrivateFile 1.0
+	MSDefenderOffice365_SafeLinksDecoder.json 1.0
+	AnyRun_Sandbox_Analysis 1.1
+	PhishTank_CheckURL 2.1
+	DNS-RPZ 1.0
+	StamusNetworks_HostID 1.0
+	IPinfo_Hosted_Domains 1.0
+	AWX_StartJob 1.0
+	RiskIQ_Subdomains 1.0
+	EmlParser 2.1
+	OktaUserLookup 1.0
+	SpamhausDBL 1.0
+	CiscoUmbrella_Report 1.0
+	ThreatResponse 1.0
+	SophosIntelix_GetReport 0.3
+	PassiveTotal_Trackers 2.0
+	MSEntraID_enableUser 1.0
+	MSEntraID_revokeSignInSessions 1.1
+	Gmail_BlockSender 1.0
+	JA4_FoxIO 1.0
+	Maltiverse_Report 1.0
+	HarfangLab-GetPersistence 1.0
+	SophosIntelix_Submit_Dynamic 0.1
+	GTI_ScanPrivateURL 1.0
+	OTXQuery 2.0
+	Investigate_Sample 1.0
+	PaloAltoNGFW_unblock_port_for_internal_communication 1.0.0
+	MetaDefenderCloud_Reputation 1.0
+	Autofocus_SearchIOC 1.0
+	Splunk_Search_Mail_Email 3.0
+	MSDefenderOffice365_disallow 1.0
+	CheckPhish 1.0
+	VirusTotal_GetReport 3.1
+	CrowdstrikeFalcon_Sandbox_Win7_64 1.0
+	HarfangLab-SearchDestinationIP 1.0
+	ONYPHE_ASM 1.1
+	MSDefenderOffice365_unblock 1.0
+	BackscatterIO_GetObservations 1.0
+	Test 1.0
+	Capa 1.0
+	Patrowl_GetReport 1.0
+	Watcher_Check 1.0
+	NSRL 1.0
+	RT4-CreateTicket 1.0
+	PhishingInitiative_Scan 1.0
+	Mailer 1.0
+	MSDefender-PushIOC-Audit 1.0
+	AMPforEndpoints_MoveGUID 1.0
+	RiskIQ_Summary 1.0
+	C1fApp 1.0
+	IP-API 1.1
+	OpenCTI_SearchObservables 2.0
+	Nessus 2.0
+	KnowBe4 1.0
+	MSDefenderOffice365_block 1.0
+	Zscaler 1.3
+	Binalyze_AIR_Acquisition 1.0
+	SentinelOne_DeepVisibility_DNSQuery 1.0
+	HarfangLab-GetSessions 1.0
+	Virusshare 2.0
+	Cloudflare_IP_Blocker 1.0
+	CrowdStrikeFalcon_suppressDetections 1.0
+	HarfangLab-GetScheduledTasks 1.0
+	SecurityTrails_Passive_DNS 1.0
+	Cylance 1.0
+	DomainTools_ReverseIP 2.0
+	Yeti 1.0
+	StaxxSearch 1.0
+	PaloAltoNGFW_unblock_external_domain 1.0.0
+	SinkDB 1.1
+	CiscoUmbrella_Blacklister 1.1
+	CheckPhish_Submit 1.0
+	RiskIQ_Services 1.0
+	HarfangLab-GetDrivers 1.0
+	HarfangLab-GetWMI 1.0
+	ONYPHE_OnDemandScan 1.0
+	PaloAltoNGFW_unblock_external_IP_address 1.0.0
+	MalwareBazaar 1.0
+	DomainToolsIris_AddRiskyDNSTag 1.0
+	Robtex_Forward_PDNS_Query 1.0
+	CrowdStrikeFalcon_RemoveIOC 1.0
+	MSDefender-PushIOC-Alert 2.0
+	MSEntraID_GetUserInfo 1.0
+	WOT_Lookup 2.0
+	JoeSandbox_File_Analysis_Inet 3.0
+	Proofpoint_Lookup 1.0
+	CrowdstrikeFalcon_Sandbox_Linux 1.0
+	RiskIQ_Whois 1.0
+	Yara 3.0
+	Ldap_Query 3.0
+	JoeSandbox_File_Analysis_Noinet 3.0
+	HarfangLab-GetPrefetches 1.0
+	Elasticsearch_Analysis 1.0
+	ONYPHE_Search 1.1
+	Splunk_Search_Hash 3.0
+	Autofocus_GetSampleAnalysis 1.0
+	HarfangLab-KillProcess 1.0
+	OrionMalware 1.0
+	ONYPHE_Summary_API 1.2
+	Axur 1.0
+	EmergingThreats_IPInfo 1.0
+	Shodan_ReverseDNS 1.0
+	Watcher_Update 1.1
+	DuoUnlockUserAccount 1.0
+	PaloAltoNGFW_unblock_internal_user 1.0.0
+	Shodan_Host_History 1.0
+	HarfangLab-GetServices 1.0
+	AIL_OnionLookup 1.0
+	Wazuh 1.0
+	PassiveTotal_Whois_Details 2.0
+	CrowdstrikeFalcon_getDeviceDetails 1.0
+	Jupyter_Run_Notebook_Responder 1.0
+	CIRCLHashlookup 1.1
+	HarfangLab-GetArtifactRamdump 1.0
+	MSDefender-RestrictAppExecution 1.0
+	Urlscan.io_Search 0.1.1
+	ValidateObservable 1.0
+	CrowdStrikeFalcon_hideHost 1.0
+	PaloAltoNGFW_block_external_IP_address 2.0.0
+	DomainTools_WhoisLookup 2.0
+	PaloAltoNGFW_block_internal_IP_address 2.0.0
+	GRR 0.1
+	Censys 2.0
+	MSEntraID_GetDirectoryAuditLogs 1.0
+	ZEROFOX_Close_alert 1.0
+	Minemeld 1.0
+	PassiveTotal_Malware 2.0
+	IntezerCommunity 1.0
+	DNSDB_IPHistory 2.0
+	PaloAltoNGFW_unblock_internal_domain 1.0.0
+	HarfangLab-IsolateHost 1.0
+	Cyberprotect_ThreatScore 3.0
+	PaloAltoNGFW_block_external_domain 2.0.0
+	DomainTools_ReverseNameServer 2.0
+	CrowdstrikeFalcon_Sandbox_Win10 1.0
+	GoogleSafebrowsing 2.0
+	PassiveTotal_Enrichment 2.0
+	TestAnalyzer 1.0
+	PayloadSecurity_File_Analysis 1.0
+	CrowdstrikeFalcon_Sandbox_Win11 1.0
+	Msg_Parser 3.0
+	CrowdstrikeFalcon_getDeviceAlerts 1.0
+	DNSdumpster_report 1.0
+	PaloAltoWildFire 1.0
+	PassiveTotal_Unique_Resolutions 2.0
+	Velociraptor 0.2
+	Splunk_Search_User 3.0
+	GreyNoise 3.2
+	RiskIQ_PushArtifactToProject 1.0
+	CuckooSandbox_Url_Analysis 1.2
+	DomainTools_ReverseWhois 2.0
+	BackscatterIO_Enrichment 1.0
+	CrowdStrikeFalcon_Sync 1.0
+	ZscalerZIA_URLLookup 1.0
+	SophosIntelix_Submit_Static 0.1
+	ONYPHE_Ctiscan 1.0
+	ZEROFOX_Takedown_request 1.0
+	CyberCrime-Tracker 1.0
+	EmailRep 1.0
+	KasperskyThreatIntelligencePortal 1.0
+	TeamCymruMHR 1.0
+	DShield_lookup 1.0
+	EmergingThreats_MalwareInfo 1.0
+	Gmail_DeleteMessage 1.0
+	GTI_GetIOCReport 1.0
+	URLhaus 2.0
+	MISP 2.1
+	StopForumSpam 1.0
+	DomainTools_HostingHistory 2.0
+	Gatewatcher_CTI 2.0
+	EclecticIQ_SearchObservable 2.0
+	MSEntraID_ForcePasswordResetWithMFA 1.0
+	VirusTotal_Rescan 3.1
+	MSEntraID_GetManagedDevicesInfo 1.0
+	Investigate_Categorization 1.0
+	GTI_ScanFile 1.0
+	CyberChef_FromBase64 1.0
+	Telegram 1.0
+	Abuse_Finder 3.0
+	HarfangLab-GetArtifactMFT 1.0
+	DevTools_Echo_Responder 1.0
+	SecurityTrails_Whois 1.0
+	DomainTools_WhoisHistory 2.0
+	VirusTotal_DownloadSample 3.1
+	MetaDefenderCloud_Scan 1.0
+	PassiveTotal_Ssl_Certificate_History 2.0
+	HarfangLab-GetArtifactUSN 1.0
+	CrowdstrikeFalcon_Sandbox_Android 1.0
+	HarfangLab-GetArtifactPrefetch 1.0
+	Splunk_Search_Other 3.0
+	HarfangLab-SearchSourceIP 1.0
+	HarfangLab-GetPipes 1.0
+	Malpedia 1.0
+	MetaDefenderCore_Scan 1.0
+	CrowdStrikeFalcon_unhideHost 1.0
+	Splunk_Search_Registry 3.0
+	RiskIQ_Malware 1.0
+	Crt_sh_Transparency_Logs 1.0
+	PaloAltoCortexXDR_scan 1.0
+	RiskIQ_Components 1.0
+	HarfangLab-GetNetworkShares 1.0
+	IPinfo_Details 1.0
+	CERTatPassiveDNS 2.0
+	Urlscan.io_Scan 0.1.0
+	DomainToolsIris_CheckMaliciousTags 1.0
+	MSDefender-UnRestrictAppExecution 1.0
+	PayloadSecurity_Url_Analysis 1.0
+	HarfangLab-GetArtifactLogs 1.0
+	MSDefender-FullVirusscan 1.0
+	Shodan_DNSResolve 1.0
+	MSDefender-PushIOC-BlockAndRemediate 1.0
+	Splunk_Search_Mail_Subject 3.0
+	VMRay 4.1
+	GoogleDNS_resolve 1.0.0
+	Watcher_Add 1.1
+	DomainToolsIris_Pivot 1.0
+	MetaDefenderCloud_GetReport 1.0
+	OpenCTI_SearchExactObservable 2.0
+	Shodan_InfoDomain 1.0
+	CuckooSandbox_File_Analysis_Inet 1.2
+	HarfangLab-GetArtifactHives 1.0
+	DNS_Lookingglass 1.0
+	Jupyter_Run_Notebook_Analyzer 1.0
+	GoogleVisionAPI_WebDetection 1.0.0
+	Valhalla_GetRuleMatches 0.3.1
+	UrlDNA_Search 0.1.0
+	Triage 2.0
+	RiskIQ_Trackers 1.0
+	Vulners_CVE 1.0
+	SpamAssassin 1.0
+	Splunk_Search_Domain_FQDN 3.0
+	Splunk_Search_IP 3.0
+	TorBlutmagie 1.0
+	MSDefender-IsolateMachine 1.0
+	RiskIQ_Reputation 1.0
+	FireHOLBlocklists 2.0
+	Vulners_IOC 1.0
+	ThreatGrid 1.0
+	HarfangLab-GetBinary 1.0
+	HarfangLab-UnisolateHost 1.0
+	Robtex_Reverse_PDNS_Query 1.0
+	PassiveTotal_Ssl_Certificate_Details 2.0
+	CrowdstrikeFalcon_GetDeviceVulnerabilities 1.0
+	PaloAltoNGFW_block_internal_user 1.0.0
+	AMPforEndpoints_IsolationStart 1.0
+	SentinelOne_DNSReverseLookup 1.0
+	RiskIQ_Artifacts 1.0
+	Gmail_UnblockDomain 1.0
+	CrowdStrikeFalcon_AddIOC 1.0
+	PaloAltoNGFW_unblock_port_for_external_communication 1.0.0
+	PaloAltoNGFW_unblock_internal_IP_address 1.0.0
+	DNSDB_NameHistory 2.0
+	PhishingInitiative_Lookup 2.0
+	AMPforEndpoints_IsolationStop 1.0
+	AbuseIPDB_Report 1.0
+	CrowdStrikeFalcon_HostContainment 1.0
+	ONYPHE_Vulnscan 1.1
+	Hashdd_Status 2.0
+	CrowdstrikeFalcon_ThreatIntel 1.0
+	PaloAltoCortexXDR_unisolate 1.0
+	HarfangLab-GetArtifactFilesystem 1.0
+	Splunk_Search_URL_URI_Path 3.0
+	RiskIQ_HostpairChildren 1.0
+	IVRE 1.0
+	JoeSandbox_Url_Analysis 2.0
+	HarfangLab-DumpProcess 1.0
+	SoltraEdge 1.0
+	Pulsedive_GetIndicator 1.0
+	QRadar_Auto_Closing_Offense 1.0
+	IBMXForce_Lookup 1.0
+	Gmail_UnblockSender 1.0
+	Watcher_Transfer 1.1
+	CISMCAP 1.0
+	Robtex_IP_Query 1.0
+	MSDefender-PushIOC-Warn 1.0
+	PaloAltoNGFW_unblock_external_user 1.0.0
+	SentinelOne_DNSQuery 2.0
+	HybridAnalysis_GetReport 1.0
+	DuoLockUserAccount 1.0
+	isMalicious_GetReport 1.0
+	Binalyze_AIR_Isolation 1.0
+	Malwares_Scan 1.0
+	AMPforEndpoints_SCDRemove 1.0
+	MSDefenderOffice365_allow 1.0
+	ClamAV_FileInfo 1.1
+	CrowdStrikeFalcon_LiftContainmentHost 1.0
+	PaloAltoNGFW_block_port_for_internal_communication 2.0.0
+	Shodan_Search 2.0
+	Lookyloo_Screenshot 1.0
+	MSDefender-PushIOC-Allowed 1.0
+	Slack_CreateChannel 1.0
+	PassiveTotal_Components 2.0
+	HarfangLab-GetRunKeys 1.0
+	ForcepointWebsensePing 1.0
+	AbuseIPDB 2.0
+	MetaDefenderCore_GetReport 1.0
+	UnshortenLink 1.2
+	CrowdstrikeFalcon_Sandbox_MacOS 1.0
+	HarfangLab-GetArtifactEvtx 1.0
+	n8n 1.0
+	Crowdsec_Analyzer 1.1
+	MalwareClustering_Search 1.0
+	Mnemonic_pDNS_Closed 3.0
+	C25CortexAnalyzer_Investigate 1.0
+	MSEntraID_ForcePasswordReset 1.0
+	Splunk_Search_File_Filename 3.0
+	HarfangLab-GetProcesses 1.0
+
+2026-03-12 20:24:09,585 [INFO] from com.sksamuel.elastic4s.http.JavaClient$ in application-pekko.actor.default-dispatcher-7 - Creating HTTP client on http://elasticsearch:9200
+2026-03-12 20:24:28,701 [INFO] from org.thp.cortex.services.K8sJobRunnerSrv in main - Kubernetes is not available
+io.fabric8.kubernetes.client.KubernetesClientException: An error has occurred.
+	at io.fabric8.kubernetes.client.KubernetesClientException.launderThrowable(KubernetesClientException.java:109)
+	at io.fabric8.kubernetes.client.KubernetesClientException.launderThrowable(KubernetesClientException.java:102)
+	at io.fabric8.kubernetes.client.dsl.internal.OperationSupport.restCall(OperationSupport.java:700)
+	at io.fabric8.kubernetes.client.impl.BaseClient.getVersionInfo(BaseClient.java:311)
+	at io.fabric8.kubernetes.client.impl.KubernetesClientImpl.getVersion(KubernetesClientImpl.java:627)
+	at io.fabric8.kubernetes.client.NamespacedKubernetesClientAdapter.getVersion(NamespacedKubernetesClientAdapter.java:194)
+	at org.thp.cortex.services.K8sJobRunnerSrv.$anonfun$isAvailable$1(K8sJobRunnerSrv.scala:39)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.util.Try$.apply(Try.scala:217)
+	at org.thp.cortex.services.K8sJobRunnerSrv.isAvailable$lzycompute(K8sJobRunnerSrv.scala:38)
+	at org.thp.cortex.services.K8sJobRunnerSrv.isAvailable(K8sJobRunnerSrv.scala:37)
+	at org.thp.cortex.services.JobRunnerSrv$$anonfun$1.applyOrElse(JobRunnerSrv.scala:51)
+	at org.thp.cortex.services.JobRunnerSrv$$anonfun$1.applyOrElse(JobRunnerSrv.scala:50)
+	at scala.collection.immutable.List.collect(List.scala:257)
+	at scala.collection.immutable.List.collect(List.scala:79)
+	at org.thp.cortex.services.JobRunnerSrv.<init>(JobRunnerSrv.scala:50)
+	at org.thp.cortex.services.JobRunnerSrv$$FastClassByGuice$$30a62a5.GUICE$TRAMPOLINE(<generated>)
+	at org.thp.cortex.services.JobRunnerSrv$$FastClassByGuice$$30a62a5.apply(<generated>)
+	at com.google.inject.internal.DefaultConstructionProxyFactory$FastClassProxy.newInstance(DefaultConstructionProxyFactory.java:82)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:114)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:91)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:300)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:40)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:60)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:113)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:91)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:300)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:169)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:45)
+	at com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:213)
+	at com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:186)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:113)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:176)
+	at play.api.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.scala:21)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:28)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+Caused by: java.io.IOException: kubernetes.default.svc
+	at io.fabric8.kubernetes.client.dsl.internal.OperationSupport.waitForResult(OperationSupport.java:504)
+	at io.fabric8.kubernetes.client.dsl.internal.OperationSupport.handleResponse(OperationSupport.java:524)
+	at io.fabric8.kubernetes.client.dsl.internal.OperationSupport.restCall(OperationSupport.java:693)
+	... 38 common frames omitted
+Caused by: java.net.UnknownHostException: kubernetes.default.svc
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:797)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1386)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1307)
+	at java.base/java.net.InetAddress.getByName(InetAddress.java:1257)
+	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:156)
+	at io.netty.util.internal.SocketUtils$8.run(SocketUtils.java:153)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at io.netty.util.internal.SocketUtils.addressByName(SocketUtils.java:153)
+	at io.netty.resolver.DefaultNameResolver.doResolve(DefaultNameResolver.java:41)
+	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:61)
+	at io.netty.resolver.SimpleNameResolver.resolve(SimpleNameResolver.java:53)
+	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:55)
+	at io.netty.resolver.InetSocketAddressResolver.doResolve(InetSocketAddressResolver.java:31)
+	at io.netty.resolver.AbstractAddressResolver.resolve(AbstractAddressResolver.java:106)
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect0(Bootstrap.java:220)
+	at io.netty.bootstrap.Bootstrap.doResolveAndConnect(Bootstrap.java:171)
+	at io.netty.bootstrap.Bootstrap.connect(Bootstrap.java:148)
+	at io.vertx.core.net.impl.ChannelProvider.handleConnect(ChannelProvider.java:152)
+	at io.vertx.core.net.impl.ChannelProvider.connect(ChannelProvider.java:103)
+	at io.vertx.core.net.impl.ChannelProvider.connect(ChannelProvider.java:89)
+	at io.vertx.core.net.impl.NetClientImpl.connectInternal2(NetClientImpl.java:308)
+	at io.vertx.core.net.impl.NetClientImpl.lambda$connectInternal2$7(NetClientImpl.java:328)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2026-03-12 20:24:29,817 [INFO] from org.thp.cortex.services.DockerJobRunnerSrv in main - Docker is available:
+Info(architecture=x86_64, containers=13, containersStopped=3, containersPaused=0, containersRunning=10, cpuCfsPeriod=true, cpuCfsQuota=true, cpuShares=true, cpuSet=true, debug=false, discoveryBackend=null, dockerRootDir=/var/lib/docker, driver=overlayfs, driverStatuses=[[driver-type, io.containerd.snapshotter.v1]], systemStatus=null, plugins={Volume=[local], Network=[bridge, host, ipvlan, macvlan, null, overlay], Authorization=null, Log=[awslogs, fluentd, gcplogs, gelf, journald, json-file, local, splunk, syslog]}, executionDriver=null, loggingDriver=json-file, cGroupDriver=cgroupfs, cGroupVersion=1, experimentalBuild=false, httpProxy=http.docker.internal:3128, httpsProxy=http.docker.internal:3128, id=069aad17-2d19-421f-a3ff-b946deafd4bc, ipv4Forwarding=true, bridgeNfIptables=null, bridgeNfIp6tables=null, images=36, indexServerAddress=https://index.docker.io/v1/, initPath=null, initSha1=null, kernelVersion=5.15.167.4-microsoft-standard-WSL2, labels=[com.docker.desktop.address=npipe://\\.\pipe\docker_cli], memoryLimit=true, memTotal=16433213440, name=docker-desktop, ncpu=22, nEventsListener=16, nfd=140, nGoroutines=182, noProxy=hubproxy.docker.internal, oomKillDisable=true, osType=linux, oomScoreAdj=null, operatingSystem=Docker Desktop, registryConfig=InfoRegistryConfig(indexConfigs={docker.io=InfoRegistryConfig.IndexConfig(mirrors=[], name=docker.io, official=true, secure=true), hubproxy.docker.internal:5555=InfoRegistryConfig.IndexConfig(mirrors=[], name=hubproxy.docker.internal:5555, official=false, secure=false)}, insecureRegistryCIDRs=[::1/128, 127.0.0.0/8], mirrors=[]), sockets=null, swapLimit=true, systemTime=2026-03-12T20:24:29.558435298Z, serverVersion=29.2.1, clusterStore=null, clusterAdvertise=null, swarm=SwarmInfo(nodeID=, nodeAddr=, localNodeState=INACTIVE, controlAvailable=false, error=, remoteManagers=null, nodes=null, managers=null, clusterInfo=null), isolation=, securityOptions=[name=seccomp,profile=builtin], runtimes={io.containerd.runc.v2=RuntimeInfo(path=runc), nvidia=RuntimeInfo(path=nvidia-container-runtime), runc=RuntimeInfo(path=runc)})
+2026-03-12 20:24:29,877 [WARN] from org.thp.cortex.services.JobRunnerSrv in main - The package cortexutils for python hasn't been found
+2026-03-12 20:24:29,879 [WARN] from org.thp.cortex.services.JobRunnerSrv in main - The package cortexutils for python2 hasn't been found
+2026-03-12 20:24:29,880 [WARN] from org.thp.cortex.services.JobRunnerSrv in main - The package cortexutils for python3 hasn't been found
+2026-03-12 20:24:30,315 [INFO] from play.api.Play in main - Application started (Prod) (no global state)
+2026-03-12 20:24:31,114 [INFO] from play.core.server.PekkoHttpServer in main - Listening for HTTP on /0:0:0:0:0:0:0:0:9001
+2026-03-12 20:24:30,934 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took -1368ms and returned 200 278 bytes
+2026-03-12 20:24:41,076 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-8 - 0:0:0:0:0:0:0:1 GET /api/status took 5ms and returned 200 278 bytes
+2026-03-12 20:24:51,131 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:24:59,765 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:25:09,904 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:25:19,966 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-8 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:25:25,561 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:25:25,561 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:25:25,961 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-6 - GET /api/alert returned 403
+2026-03-12 20:25:25,962 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 172.20.0.4 GET /api/alert took 373ms and returned 403 84 bytes
+2026-03-12 20:25:28,574 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:25:38,639 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:25:48,714 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:25:57,311 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:26:07,399 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:26:17,460 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:26:22,647 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-5 - 172.20.0.4 GET /api/status took 7ms and returned 200 278 bytes
+2026-03-12 20:26:23,046 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-5 - 172.20.0.4 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:26:23,102 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-12 - GET /api/alert returned 403
+2026-03-12 20:26:23,102 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.4 GET /api/alert took 47ms and returned 403 84 bytes
+2026-03-12 20:26:26,033 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:26:36,120 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:26:46,187 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:26:54,823 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:27:04,887 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:27:14,953 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:27:19,685 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:27:20,125 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 172.20.0.4 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:27:20,155 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-7 - GET /api/alert returned 403
+2026-03-12 20:27:20,155 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 172.20.0.4 GET /api/alert took 21ms and returned 403 84 bytes
+2026-03-12 20:27:23,448 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-5 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:27:33,507 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:27:43,590 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:27:52,277 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:28:02,335 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:28:12,404 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 4ms and returned 200 278 bytes
+2026-03-12 20:28:13,391 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-11 - POST /api/responder/_search returned 403
+2026-03-12 20:28:13,391 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 172.20.0.4 POST /api/responder/_search took 180ms and returned 403 84 bytes
+2026-03-12 20:28:16,041 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-8 - GET /api/analyzer?range=all returned 403
+2026-03-12 20:28:16,042 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-8 - 172.20.0.4 GET /api/analyzer?range=all took 45ms and returned 403 84 bytes
+2026-03-12 20:28:16,787 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 172.20.0.4 GET /api/status took 3ms and returned 200 278 bytes
+2026-03-12 20:28:17,251 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 172.20.0.4 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:28:17,281 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-9 - GET /api/alert returned 403
+2026-03-12 20:28:17,282 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 172.20.0.4 GET /api/alert took 22ms and returned 403 84 bytes
+2026-03-12 20:28:21,014 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:28:31,074 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:28:41,216 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-8 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:28:49,836 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-8 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:28:59,909 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-8 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:29:09,967 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-8 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:29:12,977 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-9 - POST /api/responder/_search returned 403
+2026-03-12 20:29:12,977 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 172.20.0.4 POST /api/responder/_search took 99ms and returned 403 84 bytes
+2026-03-12 20:29:13,259 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-11 - GET /api/analyzer?range=all returned 403
+2026-03-12 20:29:13,260 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 172.20.0.4 GET /api/analyzer?range=all took 31ms and returned 403 84 bytes
+2026-03-12 20:29:13,868 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 172.20.0.4 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:29:14,351 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:29:14,377 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-12 - GET /api/alert returned 403
+2026-03-12 20:29:14,377 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.4 GET /api/alert took 19ms and returned 403 84 bytes
+2026-03-12 20:29:18,590 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:29:23,845 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 172.20.0.1 GET / took 9ms and returned 303 0 bytes
+2026-03-12 20:29:24,003 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-14 - 172.20.0.1 GET /index.html took 125ms and returned 200 1254 bytes
+2026-03-12 20:29:24,071 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.1 GET /app.b80f64573ddbbff32969.js took 4ms and returned 200 2753435 bytes
+2026-03-12 20:29:24,071 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 172.20.0.1 GET /assets/styles/css/app.b80f64573ddbbff32969.css took 5ms and returned 200 11376982 bytes
+2026-03-12 20:29:24,655 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.1 GET /favicon-32x32.png took 18ms and returned 200 1728 bytes
+2026-03-12 20:29:24,719 [ERROR] from org.elastic4play.controllers.Authenticated in application-pekko.actor.default-dispatcher-12 - Authentication failure:
+	session: AuthenticationError User session not found
+	key: AuthenticationError Authentication header not found
+	init: AuthenticationError Use of initial user is forbidden because users exist in database
+2026-03-12 20:29:24,720 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.1 GET /api/user/current took 115ms and returned 401 65 bytes
+2026-03-12 20:29:24,735 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.1 GET /api/status took 3ms and returned 200 278 bytes
+2026-03-12 20:29:28,691 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:29:38,749 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:29:47,334 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-8 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:29:57,385 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-14 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:30:07,444 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:30:10,929 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 172.20.0.4 GET /api/status took 4ms and returned 200 278 bytes
+2026-03-12 20:30:11,436 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 172.20.0.4 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:30:11,503 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-12 - GET /api/alert returned 403
+2026-03-12 20:30:11,504 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.4 GET /api/alert took 59ms and returned 403 84 bytes
+2026-03-12 20:30:16,090 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:30:26,147 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-9 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:30:36,199 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:30:44,641 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 3ms and returned 200 278 bytes
+2026-03-12 20:30:54,699 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-8 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:31:04,776 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:31:07,895 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 172.20.0.4 GET /api/status took 4ms and returned 200 278 bytes
+2026-03-12 20:31:08,462 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 172.20.0.4 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:31:08,490 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-14 - GET /api/alert returned 403
+2026-03-12 20:31:08,491 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-14 - 172.20.0.4 GET /api/alert took 23ms and returned 403 84 bytes
+2026-03-12 20:31:13,467 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-14 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:31:16,970 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 172.20.0.1 GET / took 1ms and returned 303 0 bytes
+2026-03-12 20:31:17,298 [ERROR] from org.elastic4play.controllers.Authenticated in application-pekko.actor.default-dispatcher-6 - Authentication failure:
+	session: AuthenticationError User session not found
+	key: AuthenticationError Authentication header not found
+	init: AuthenticationError Use of initial user is forbidden because users exist in database
+2026-03-12 20:31:17,298 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 172.20.0.1 GET /api/user/current took 99ms and returned 401 65 bytes
+2026-03-12 20:31:17,311 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 172.20.0.1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:31:23,544 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 0:0:0:0:0:0:0:1 GET /api/status took 1ms and returned 200 278 bytes
+2026-03-12 20:31:33,653 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:31:42,124 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-8 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:31:52,197 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:32:02,330 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:32:04,931 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 172.20.0.4 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:32:05,520 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 172.20.0.4 GET /api/status took 3ms and returned 200 278 bytes
+2026-03-12 20:32:05,547 [WARN] from org.thp.cortex.services.ErrorHandler in application-pekko.actor.default-dispatcher-11 - GET /api/alert returned 403
+2026-03-12 20:32:05,548 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 172.20.0.4 GET /api/alert took 20ms and returned 403 84 bytes
+2026-03-12 20:32:10,995 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-11 - 0:0:0:0:0:0:0:1 GET /api/status took 4ms and returned 200 278 bytes
+2026-03-12 20:32:21,053 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 3ms and returned 200 278 bytes
+2026-03-12 20:32:31,119 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-12 - 0:0:0:0:0:0:0:1 GET /api/status took 2ms and returned 200 278 bytes
+2026-03-12 20:32:39,592 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-7 - 0:0:0:0:0:0:0:1 GET /api/status took 0ms and returned 200 278 bytes
+2026-03-12 20:32:49,656 [INFO] from org.thp.cortex.services.AccessLogFilter in application-pekko.actor.default-dispatcher-6 - 0:0:0:0:0:0:0:1 GET /api/status took 3ms and returned 200 278 bytes

@@ -1,0 +1,27 @@
+# Local secrets
+*.env
+*/.env
+*/secret.conf
+*.pem
+*.key
+
+# Runtime data
+*/elasticsearch/data/*
+*/elasticsearch/logs/*
+*/cassandra/data/*
+*/cassandra/logs/*
+*/thehive/logs/*
+*/cortex/cortex-jobs/*
+*/misp-docker/configs/*
+*/misp-docker/logs/*
+*/misp-docker/files/*
+*/misp-docker/gnupg/*
+*/misp-docker/ssl/*.pem
+
+# Keep placeholders
+!*/elasticsearch/data/.gitkeep
+!*/elasticsearch/logs/.gitkeep
+!*/cassandra/data/.gitkeep
+!*/cassandra/logs/.gitkeep
+!*/thehive/logs/.gitkeep
+!*/cortex/cortex-jobs/.gitkeep

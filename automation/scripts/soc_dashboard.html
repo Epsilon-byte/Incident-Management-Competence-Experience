@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catnip Games SOC Dashboard</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600&family=IBM+Plex+Sans:wght@300;400;600&display=swap');
+
+  :root {
+    --bg:        #0a0d12;
+    --surface:   #111620;
+    --border:    #1e2535;
+    --accent:    #00d4ff;
+    --accent2:   #ff5e6b;
+    --green:     #3dffa0;
+    --yellow:    #ffcc44;
+    --red:       #ff4757;
+    --dim:       #3a4560;
+    --text:      #ccd6f6;
+    --text-dim:  #5a6a8a;
+    --critical:  #ff4757;
+    --high:      #ff8c42;
+    --medium:    #ffcc44;
+    --low:       #3dffa0;
+    --font-mono: 'IBM Plex Mono', monospace;
+    --font-sans: 'IBM Plex Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Scan-line overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,212,255,0.015) 2px,
+      rgba(0,212,255,0.015) 4px
+    );
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  /* ── Layout ────────────────────────────────────────────── */
+  .shell {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px 40px;
+  }
+
+  /* ── Header ─────────────────────────────────────────────── */
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0 16px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .brand-cat {
+    font-size: 24px;
+    filter: drop-shadow(0 0 8px rgba(0,212,255,0.6));
+  }
+
+  .brand-text {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .brand-sub {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .live-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--green);
+    letter-spacing: 0.1em;
+  }
+
+  .live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 8px var(--green);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.4; transform: scale(0.85); }
+  }
+
+  .timestamp {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-dim);
+  }
+
+  /* ── Status bar ──────────────────────────────────────────── */
+  .status-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .svc-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .svc-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--status-col, var(--dim));
+    border-radius: 3px 0 0 3px;
+  }
+
+  .svc-card.up    { --status-col: var(--green); }
+  .svc-card.warn  { --status-col: var(--yellow); }
+  .svc-card.down  { --status-col: var(--red); }
+
+  .svc-icon {
+    font-size: 18px;
+    opacity: 0.9;
+  }
+
+  .svc-info { flex: 1; }
+
+  .svc-name {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+
+  .svc-status {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--status-col, var(--text));
+  }
+
+  .svc-port {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-dim);
+  }
+
+  /* ── Main grid ───────────────────────────────────────────── */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 340px;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .side-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* ── Panel ───────────────────────────────────────────────── */
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .panel-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(0,212,255,0.03);
+  }
+
+  .panel-title {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .panel-badge {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: rgba(0,212,255,0.08);
+    color: var(--accent);
+    border: 1px solid rgba(0,212,255,0.2);
+  }
+
+  .panel-body { padding: 16px; }
+
+  /* ── Big number ──────────────────────────────────────────── */
+  .kpi-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .kpi {
+    text-align: center;
+    padding: 12px 8px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 6px;
+    border: 1px solid var(--border);
+  }
+
+  .kpi-num {
+    font-family: var(--font-mono);
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .kpi-label {
+    font-size: 11px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .kpi.accent  .kpi-num { color: var(--accent); }
+  .kpi.green   .kpi-num { color: var(--green); }
+  .kpi.yellow  .kpi-num { color: var(--yellow); }
+  .kpi.red     .kpi-num { color: var(--red); }
+
+  /* ── Severity bars ───────────────────────────────────────── */
+  .sev-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .sev-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    width: 60px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .sev-bar-track {
+    flex: 1;
+    height: 8px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .sev-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.6s ease;
+  }
+
+  .sev-count {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    width: 24px;
+    text-align: right;
+  }
+
+  .sev-Critical .sev-label,
+  .sev-Critical .sev-count   { color: var(--critical); }
+  .sev-Critical .sev-bar-fill { background: var(--critical); box-shadow: 0 0 6px var(--critical); }
+
+  .sev-High .sev-label,
+  .sev-High .sev-count       { color: var(--high); }
+  .sev-High .sev-bar-fill    { background: var(--high); box-shadow: 0 0 6px var(--high); }
+
+  .sev-Medium .sev-label,
+  .sev-Medium .sev-count     { color: var(--medium); }
+  .sev-Medium .sev-bar-fill  { background: var(--medium); }
+
+  .sev-Low .sev-label,
+  .sev-Low .sev-count        { color: var(--low); }
+  .sev-Low .sev-bar-fill     { background: var(--low); }
+
+  /* ── SLA gauge ───────────────────────────────────────────── */
+  .sla-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .gauge-svg { overflow: visible; }
+
+  .gauge-track { fill: none; stroke: rgba(255,255,255,0.06); stroke-width: 12; }
+  .gauge-fill  { fill: none; stroke-width: 12; stroke-linecap: round;
+                 transition: stroke-dasharray 1s ease, stroke 0.5s; }
+
+  .gauge-text-big {
+    font-family: var(--font-mono);
+    font-size: 22px;
+    font-weight: 600;
+    fill: var(--text);
+    dominant-baseline: middle;
+    text-anchor: middle;
+  }
+
+  .gauge-text-small {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    fill: var(--text-dim);
+    dominant-baseline: middle;
+    text-anchor: middle;
+  }
+
+  /* ── Recent events ───────────────────────────────────────── */
+  .event-list { display: flex; flex-direction: column; gap: 6px; }
+
+  .event-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.02);
+    border-left: 2px solid transparent;
+    font-size: 12px;
+    animation: slide-in 0.3s ease;
+  }
+
+  @keyframes slide-in {
+    from { opacity: 0; transform: translateX(-8px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  .event-item.Critical { border-color: var(--critical); }
+  .event-item.High     { border-color: var(--high); }
+  .event-item.Medium   { border-color: var(--medium); }
+  .event-item.Low      { border-color: var(--low); }
+
+  .event-sev {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 2px 5px;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .event-item.Critical .event-sev { color: var(--critical); }
+  .event-item.High     .event-sev { color: var(--high); }
+  .event-item.Medium   .event-sev { color: var(--medium); }
+  .event-item.Low      .event-sev { color: var(--low); }
+
+  .event-body { flex: 1; color: var(--text); }
+  .event-time { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); white-space: nowrap; }
+
+  /* ── NF targets table ────────────────────────────────────── */
+  .targets-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .targets-table td { padding: 8px 4px; border-bottom: 1px solid var(--border); }
+  .targets-table tr:last-child td { border-bottom: none; }
+  .targets-table .t-label { color: var(--text-dim); font-size: 11px; }
+  .targets-table .t-target { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); }
+  .targets-table .t-status { text-align: right; }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+
+  .badge.ok   { background: rgba(61,255,160,0.1); color: var(--green);  border: 1px solid rgba(61,255,160,0.25); }
+  .badge.warn { background: rgba(255,204,68,0.1); color: var(--yellow); border: 1px solid rgba(255,204,68,0.25); }
+  .badge.fail { background: rgba(255,71,87,0.1);  color: var(--red);    border: 1px solid rgba(255,71,87,0.25); }
+
+  /* ── Throughput sparkline ─────────────────────────────────── */
+  .sparkline { overflow: visible; }
+
+  /* ── Config panel ────────────────────────────────────────── */
+  .config-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .config-row:last-child { border-bottom: none; }
+
+  .config-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    width: 120px;
+    flex-shrink: 0;
+  }
+
+  .config-input {
+    flex: 1;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 5px 8px;
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .config-input:focus { border-color: var(--accent); }
+
+  .btn-refresh {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: rgba(0,212,255,0.08);
+    border: 1px solid rgba(0,212,255,0.3);
+    border-radius: 5px;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    cursor: pointer;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: background 0.2s, border-color 0.2s;
+    width: 100%;
+    justify-content: center;
+    margin-top: 12px;
+  }
+
+  .btn-refresh:hover {
+    background: rgba(0,212,255,0.14);
+    border-color: var(--accent);
+  }
+
+  /* ── Footer ─────────────────────────────────────────────── */
+  .footer {
+    margin-top: 8px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-dim);
+  }
+
+  /* ── Responsive ──────────────────────────────────────────── */
+  @media (max-width: 1100px) {
+    .main-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 720px) {
+    .status-bar { grid-template-columns: 1fr 1fr; }
+    .main-grid  { grid-template-columns: 1fr; }
+    .side-grid  { grid-template-columns: 1fr; }
+    .kpi-row    { grid-template-columns: 1fr 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- ── Header ────────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-cat">🐱</span>
+      <div>
+        <div class="brand-text">Catnip Games International</div>
+        <div class="brand-sub">Security Operations Centre · Dashboard</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="live-badge"><span class="live-dot"></span>LIVE</div>
+      <div class="timestamp" id="ts">—</div>
+    </div>
+  </header>
+
+  <!-- ── Service status bar ────────────────────────────────── -->
+  <div class="status-bar" id="status-bar">
+    <div class="svc-card" id="svc-thehive">
+      <span class="svc-icon">🔎</span>
+      <div class="svc-info">
+        <div class="svc-name">TheHive</div>
+        <div class="svc-status">Checking…</div>
+        <div class="svc-port">:9000</div>
+      </div>
+    </div>
+    <div class="svc-card" id="svc-cortex">
+      <span class="svc-icon">⚙️</span>
+      <div class="svc-info">
+        <div class="svc-name">Cortex</div>
+        <div class="svc-status">Checking…</div>
+        <div class="svc-port">:9001</div>
+      </div>
+    </div>
+    <div class="svc-card" id="svc-elasticsearch">
+      <span class="svc-icon">🗃️</span>
+      <div class="svc-info">
+        <div class="svc-name">Elasticsearch</div>
+        <div class="svc-status">Checking…</div>
+        <div class="svc-port">:9200</div>
+      </div>
+    </div>
+    <div class="svc-card" id="svc-misp">
+      <span class="svc-icon">🛡️</span>
+      <div class="svc-info">
+        <div class="svc-name">MISP</div>
+        <div class="svc-status">Checking…</div>
+        <div class="svc-port">:443</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Main grid ─────────────────────────────────────────── -->
+  <div class="main-grid">
+
+    <!-- Cases panel -->
+    <div class="panel">
+      <div class="panel-head">
+        <span class="panel-title">Cases</span>
+        <span class="panel-badge" id="cases-badge">0 total</span>
+      </div>
+      <div class="panel-body">
+        <div class="kpi-row">
+          <div class="kpi accent"><div class="kpi-num" id="kpi-total-cases">—</div><div class="kpi-label">Total</div></div>
+          <div class="kpi yellow"><div class="kpi-num" id="kpi-open-cases">—</div><div class="kpi-label">Open</div></div>
+          <div class="kpi green"><div class="kpi-num" id="kpi-resolved-cases">—</div><div class="kpi-label">Resolved</div></div>
+        </div>
+        <div id="case-severity-bars"></div>
+      </div>
+    </div>
+
+    <!-- Alerts panel -->
+    <div class="panel">
+      <div class="panel-head">
+        <span class="panel-title">Alerts</span>
+        <span class="panel-badge" id="alerts-badge">0 total</span>
+      </div>
+      <div class="panel-body">
+        <div class="kpi-row">
+          <div class="kpi accent"><div class="kpi-num" id="kpi-total-alerts">—</div><div class="kpi-label">Total</div></div>
+          <div class="kpi yellow"><div class="kpi-num" id="kpi-new-alerts">—</div><div class="kpi-label">New</div></div>
+          <div class="kpi green"><div class="kpi-num" id="kpi-imported-alerts">—</div><div class="kpi-label">Imported</div></div>
+        </div>
+        <div id="alert-severity-bars"></div>
+      </div>
+    </div>
+
+    <!-- Right column -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+
+      <!-- SLA gauge -->
+      <div class="panel">
+        <div class="panel-head">
+          <span class="panel-title">SLA Compliance</span>
+          <span class="panel-badge">≤15 min target</span>
+        </div>
+        <div class="panel-body sla-wrap">
+          <svg class="gauge-svg" width="140" height="90" viewBox="0 0 140 90">
+            <path class="gauge-track"
+              d="M 20 80 A 50 50 0 0 1 120 80"
+              fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="12"/>
+            <path class="gauge-fill" id="gauge-fill"
+              d="M 20 80 A 50 50 0 0 1 120 80"
+              fill="none" stroke="var(--green)" stroke-width="12"
+              stroke-linecap="round"
+              stroke-dasharray="0 157" />
+            <text class="gauge-text-big" x="70" y="70" id="gauge-text">—</text>
+            <text class="gauge-text-small" x="70" y="84">SLA MET</text>
+          </svg>
+          <div style="font-size:11px;color:var(--text-dim);text-align:center;font-family:var(--font-mono)" id="sla-detail">
+            Load data to calculate
+          </div>
+        </div>
+      </div>
+
+      <!-- Avg response -->
+      <div class="panel">
+        <div class="panel-head">
+          <span class="panel-title">Avg Response Time</span>
+        </div>
+        <div class="panel-body" style="text-align:center;padding:20px 16px;">
+          <div style="font-family:var(--font-mono);font-size:36px;font-weight:600;color:var(--accent);line-height:1" id="avg-response">—</div>
+          <div style="font-size:11px;color:var(--text-dim);margin-top:6px">minutes per case</div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /.main-grid -->
+
+  <!-- ── Bottom grid ───────────────────────────────────────── -->
+  <div class="side-grid">
+
+    <!-- Platform targets -->
+    <div class="panel">
+      <div class="panel-head">
+        <span class="panel-title">Platform Targets</span>
+      </div>
+      <div class="panel-body">
+        <table class="targets-table">
+          <tr>
+            <td class="t-label">Triage SLA</td>
+            <td class="t-target">≤ 15 min</td>
+            <td class="t-status"><span class="badge" id="t-triage">—</span></td>
+          </tr>
+          <tr>
+            <td class="t-label">Alert throughput</td>
+            <td class="t-target">1,000 / day</td>
+            <td class="t-status"><span class="badge" id="t-throughput">—</span></td>
+          </tr>
+          <tr>
+            <td class="t-label">Intelligence latency</td>
+            <td class="t-target">&lt; 5 min</td>
+            <td class="t-status"><span class="badge ok">✓ Config</span></td>
+          </tr>
+          <tr>
+            <td class="t-label">Concurrent incidents</td>
+            <td class="t-target">100</td>
+            <td class="t-status"><span class="badge" id="t-concurrent">—</span></td>
+          </tr>
+          <tr>
+            <td class="t-label">Availability</td>
+            <td class="t-target">24/7</td>
+            <td class="t-status"><span class="badge ok" id="t-avail">✓ UP</span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Connection config -->
+    <div class="panel">
+      <div class="panel-head">
+        <span class="panel-title">Connection Settings</span>
+      </div>
+      <div class="panel-body">
+        <div class="config-row">
+          <span class="config-label">TheHive URL</span>
+          <input class="config-input" id="cfg-thehive" value="http://localhost:9000" placeholder="http://localhost:9000">
+        </div>
+        <div class="config-row">
+          <span class="config-label">TheHive API Key</span>
+          <input class="config-input" id="cfg-thehive-key" type="password" placeholder="your-api-key">
+        </div>
+        <div class="config-row">
+          <span class="config-label">Elasticsearch URL</span>
+          <input class="config-input" id="cfg-es" value="http://localhost:9200" placeholder="http://localhost:9200">
+        </div>
+        <div class="config-row">
+          <span class="config-label">ES Password</span>
+          <input class="config-input" id="cfg-es-pass" type="password" placeholder="(optional)">
+        </div>
+        <button class="btn-refresh" onclick="refresh()">↻ REFRESH DATA</button>
+      </div>
+    </div>
+
+  </div><!-- /.side-grid -->
+
+  <div class="footer">
+    <span>Catnip Games International — SOC Platform · Platform Reliability</span>
+    <span id="footer-ts">—</span>
+  </div>
+
+</div><!-- /.shell -->
+
+<script>
+// ── State ────────────────────────────────────────────────────
+const SEVERITY_ORDER = ['Critical','High','Medium','Low'];
+
+// Simulated/demo data when live API is unavailable
+const DEMO = {
+  cases: {
+    total: 18, open: 7, resolved: 11,
+    severity: { Critical: 2, High: 5, Medium: 8, Low: 3 },
+    avgResponseMin: 12.4, slaMetCount: 9, slaTotalCount: 11
+  },
+  alerts: {
+    total: 247, new: 34, imported: 190, ignored: 23,
+    severity: { Critical: 4, High: 28, Medium: 95, Low: 120 }
+  }
+};
+
+// ── Helpers ──────────────────────────────────────────────────
+function url(id) { return document.getElementById(id); }
+function setText(id, v) { const el = url(id); if (el) el.textContent = v; }
+function setStatus(cardId, status, text) {
+  const card = url(cardId);
+  if (!card) return;
+  card.className = `svc-card ${status}`;
+  card.querySelector('.svc-status').textContent = text;
+}
+
+function severityBars(containerId, data) {
+  const el = url(containerId);
+  if (!el) return;
+  const total = Object.values(data).reduce((a,b)=>a+b,0) || 1;
+  el.innerHTML = SEVERITY_ORDER.map(sev => {
+    const n = data[sev] || 0;
+    const pct = Math.round(n / total * 100);
+    return `
+      <div class="sev-row sev-${sev}">
+        <span class="sev-label">${sev}</span>
+        <div class="sev-bar-track">
+          <div class="sev-bar-fill" style="width:${pct}%"></div>
+        </div>
+        <span class="sev-count">${n}</span>
+      </div>`;
+  }).join('');
+}
+
+function setGauge(pct) {
+  const fill = url('gauge-fill');
+  const text = url('gauge-text');
+  if (!fill || !text) return;
+  const arcLen = 157; // half-circle perimeter
+  const filled = pct == null ? 0 : Math.min(pct / 100 * arcLen, arcLen);
+  fill.setAttribute('stroke-dasharray', `${filled} ${arcLen - filled}`);
+  const col = pct == null ? 'var(--dim)' : pct >= 90 ? 'var(--green)' : pct >= 70 ? 'var(--yellow)' : 'var(--red)';
+  fill.style.stroke = col;
+  text.textContent = pct == null ? '—' : `${pct}%`;
+  text.style.fill = col;
+}
+
+function setBadge(id, status, text) {
+  const el = url(id);
+  if (!el) return;
+  el.className = `badge ${status}`;
+  el.textContent = text;
+}
+
+function updateTimestamp() {
+  const now = new Date().toUTCString().replace('GMT','UTC');
+  setText('ts', now);
+  setText('footer-ts', now);
+}
+
+// ── Live fetch helpers ────────────────────────────────────────
+async function fetchJSON(url, headers={}) {
+  try {
+    const r = await fetch(url, { headers, mode:'cors' });
+    if (!r.ok) return null;
+    return await r.json();
+  } catch { return null; }
+}
+
+// ── Service health checks ─────────────────────────────────────
+async function checkServices() {
+  const thehiveUrl = url('cfg-thehive')?.value || 'http://localhost:9000';
+  const esUrl      = url('cfg-es')?.value      || 'http://localhost:9200';
+
+  const checks = [
+    { id:'svc-thehive',       url: `${thehiveUrl}/api/v1/status`,   label:'TheHive' },
+    { id:'svc-cortex',        url: `http://localhost:9001/api/status`, label:'Cortex' },
+    { id:'svc-elasticsearch', url: `${esUrl}/_cluster/health`,        label:'ES' },
+    { id:'svc-misp',          url: `https://localhost/users/login`,    label:'MISP' },
+  ];
+
+  for (const c of checks) {
+    try {
+      const r = await fetchJSON(c.url);
+      if (r !== null) {
+        setStatus(c.id, 'up', '● Online');
+      } else {
+        setStatus(c.id, 'warn', '● No Data (CORS?)');
+      }
+    } catch {
+      setStatus(c.id, 'down', '● Unreachable');
+    }
+  }
+}
+
+// ── Load data (live → fallback to demo) ─────────────────────
+async function loadData() {
+  const thehiveUrl = url('cfg-thehive')?.value || 'http://localhost:9000';
+  const apiKey     = url('cfg-thehive-key')?.value || '';
+  const esUrl      = url('cfg-es')?.value || 'http://localhost:9200';
+
+  const headers = apiKey
+    ? { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' }
+    : { 'Content-Type': 'application/json' };
+
+  let usedLive = false;
+  let cases = DEMO.cases;
+  let alerts = DEMO.alerts;
+
+  // TheHive cases
+  if (apiKey) {
+    const [casesRaw, alertsRaw] = await Promise.all([
+      fetchJSON(`${thehiveUrl}/api/v1/case/_search`, headers),
+      fetchJSON(`${thehiveUrl}/api/v1/alert/_search`, headers),
+    ]);
+
+    if (Array.isArray(casesRaw)) {
+      usedLive = true;
+      const sev = { Critical:0, High:0, Medium:0, Low:0 };
+      const SMAP = {1:'Low',2:'Medium',3:'High',4:'Critical'};
+      let open=0, resolved=0, times=[];
+      for (const c of casesRaw) {
+        const sl = SMAP[c.severity||2]||'Medium';
+        if (sev[sl] !== undefined) sev[sl]++;
+        if (['Open','InProgress'].includes(c.status)) open++;
+        if (c.status === 'Resolved') resolved++;
+        if (c._createdAt && c.endDate && c.endDate > c._createdAt)
+          times.push((c.endDate - c._createdAt)/60000);
+      }
+      const avg = times.length ? times.reduce((a,b)=>a+b,0)/times.length : null;
+      const met = times.filter(t=>t<=15).length;
+      cases = { total:casesRaw.length, open, resolved, severity:sev,
+                avgResponseMin: avg ? Math.round(avg*10)/10 : null,
+                slaMetCount:met, slaTotalCount:times.length };
+    }
+
+    if (Array.isArray(alertsRaw)) {
+      const sev = { Critical:0, High:0, Medium:0, Low:0 };
+      const SMAP = {1:'Low',2:'Medium',3:'High',4:'Critical'};
+      let newA=0, imp=0, ign=0;
+      for (const a of alertsRaw) {
+        const sl = SMAP[a.severity||2]||'Medium';
+        if (sev[sl] !== undefined) sev[sl]++;
+        if (a.status==='New') newA++;
+        if (a.status==='Imported') imp++;
+        if (a.status==='Ignored') ign++;
+      }
+      alerts = { total:alertsRaw.length, new:newA, imported:imp, ignored:ign, severity:sev };
+    }
+  }
+
+  return { cases, alerts, usedLive };
+}
+
+// ── Render ────────────────────────────────────────────────────
+async function refresh() {
+  updateTimestamp();
+  checkServices(); // non-blocking
+
+  const { cases, alerts, usedLive } = await loadData();
+
+  // Cases KPIs
+  setText('kpi-total-cases',    cases.total);
+  setText('kpi-open-cases',     cases.open);
+  setText('kpi-resolved-cases', cases.resolved);
+  setText('cases-badge', `${cases.total} total${usedLive ? '' : ' (demo)'}`);
+  severityBars('case-severity-bars', cases.severity);
+
+  // Alerts KPIs
+  setText('kpi-total-alerts',    alerts.total);
+  setText('kpi-new-alerts',      alerts.new);
+  setText('kpi-imported-alerts', alerts.imported);
+  setText('alerts-badge', `${alerts.total} total${usedLive ? '' : ' (demo)'}`);
+  severityBars('alert-severity-bars', alerts.severity);
+
+  // SLA gauge
+  const slaPct = cases.slaTotalCount
+    ? Math.round(cases.slaMetCount / cases.slaTotalCount * 100)
+    : null;
+  setGauge(slaPct);
+  setText('sla-detail',
+    cases.slaTotalCount
+      ? `${cases.slaMetCount} of ${cases.slaTotalCount} cases within 15 min`
+      : 'No closed cases yet'
+  );
+
+  // Avg response
+  setText('avg-response',
+    cases.avgResponseMin != null ? cases.avgResponseMin.toFixed(1) : '—'
+  );
+
+  // Platform targets
+  const slaOk = slaPct != null ? slaPct >= 90 : null;
+  setBadge('t-triage',
+    slaOk === true  ? 'ok'  : slaOk === false ? 'fail' : 'warn',
+    slaOk === true  ? `✓ ${slaPct}%` : slaOk === false ? `✗ ${slaPct}%` : '—'
+  );
+
+  const throughputOk = alerts.total <= 1000;
+  setBadge('t-throughput',
+    throughputOk ? 'ok' : 'fail',
+    throughputOk ? `✓ ${alerts.total}` : `✗ ${alerts.total}`
+  );
+
+  const openOk = cases.open < 100;
+  setBadge('t-concurrent',
+    openOk ? 'ok' : 'fail',
+    openOk ? `✓ ${cases.open} open` : `✗ ${cases.open} open`
+  );
+}
+
+// ── Auto-refresh every 30 s ───────────────────────────────────
+refresh();
+setInterval(refresh, 30000);
+setInterval(updateTimestamp, 1000);
+</script>
+</body>
+</html>

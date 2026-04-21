@@ -4,13 +4,13 @@ Prototype Security Operations Centre platform for Catnip Games International, bu
 
 ## Platform Overview
 
-| Component | Purpose | Port |
-|-----------|---------|------|
-| TheHive | Case & incident management | (Need to edit) |
-| MISP | Threat intelligence sharing | (Need to edit) |
-| Cortex | Automated analysis & response | (Need to edit) |
-| Elasticsearch | Log storage & search | (Need to edit) |
-| Kibana | Log visualisation & dashboards | (Need to edit) |
+| Component | Purpose | 
+|-----------|---------|
+| TheHive | Case & incident management |  
+| MISP | Threat intelligence sharing | 
+| Cortex | Automated analysis & response | 
+| Elasticsearch | Log storage & search | 
+| Kibana | Log visualisation & dashboards | 
 
 ## Repository Structure
 
@@ -39,12 +39,12 @@ catnip-soc-platform/
 
 | Role | Owner | Key Deliverables |
 |------|-------|-----------------|
-| Infrastructure & Deployment | TBC | VM setup, Docker, service config |
-| Incident Response Lead | TBC | Playbooks, escalation procedures |
-| MISP & Threat Intelligence | TBC | IOC feeds, intelligence sharing |
-| Cortex & Automation | TBC | Analysers, automated workflows |
-| Platform Reliability & Git | TBC | Backup/recovery, repo, user roles, alert enrichment |
-| Metrics & Reporting | TBC | KPI dashboard, response time tracking |
+| Infrastructure & Deployment | Michaela | VM setup, Docker, service config |
+| Incident Response Lead | Amanda | Playbooks, escalation procedures |
+| MISP & Threat Intelligence | Success | IOC feeds, intelligence sharing |
+| Cortex & Automation | Tosin | Analysers, automated workflows |
+| Platform Reliability & Git | N/A | Backup/recovery, repo, user roles, alert enrichment |
+| Metrics & Reporting | Abdul | KPI dashboard, response time tracking |
 
 ## Non-Functional Requirements
 

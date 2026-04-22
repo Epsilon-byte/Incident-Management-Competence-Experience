@@ -304,24 +304,6 @@ My contribution ensured that:
 
 ---
 
-## Repository Structure
-
-```
-📁 soc-misp-thehive-integration/
-├── README.md                          ← This file
-├── report/
-│   └── MISP_Integration_Report.pdf   ← Full technical report
-└── screenshots/
-    ├── soc_dashboard.png
-    ├── thehive_cases_list.png
-    ├── case12_activity.png
-    ├── case11_observables.png
-    ├── case11_time_metrics.png
-    ├── case11_export_misp.png
-    ├── misp_event4.png
-    ├── cortex_jobs_ip.png
-    └── cortex_jobs_8888.png
-```
 
 ---
 

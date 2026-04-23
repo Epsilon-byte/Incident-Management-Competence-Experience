@@ -1,0 +1,19 @@
+services:
+  elasticsearch:
+    environment:
+      ES_JAVA_OPTS: "-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+
+  cassandra:
+    environment:
+      MAX_HEAP_SIZE: "512M"
+      HEAP_NEWSIZE: "128M"
+
+  thehive:
+    environment:
+      THEHIVE_SEARCH_URI: "http://elasticsearch:9200"
+      THEHIVE_SEARCH_USERNAME: "elastic"
+      THEHIVE_SEARCH_PASSWORD: "changeme123"
